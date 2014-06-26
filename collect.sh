@@ -6,7 +6,7 @@ function collect() {
   OLD_IFS=$IFS
   IFS=$'\n'
   files=( $( 
-    find /d/DEV -type f \( -iname \*.docx -o -iname \*.mobi -o -iname \*.doc -o -iname \*.pdf \) \
+    find /d/DEV -type f \( -iname \*.ppt -o -iname \*.docx -o -iname \*.mobi -o -iname \*.doc -o -iname \*.pdf \) \
       -not \( -path  '*/.git/*' -o -path '*/.m2/*' -o -path '*/caches/*' -o -path '*/.svn/*' \) 2>/dev/null
     ))
   for i in ${files[*]} ; do
@@ -14,3 +14,5 @@ function collect() {
   done
   IFS=$OLD_IFS
 }
+
+#collect
